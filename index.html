@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Map</title>
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="w-50 mx-auto  p-3 my-2 rounded">
+        <h2 class="text-center my-2 fw-bold my-4">Weather Update by Faysal </h2>
+
+        <!-- search part -->
+        <div class="input-group mb-3">
+            <input id="input-field" type="text" class="form-control" placeholder="City Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="loadData()" class="btn btn-outline-warning text-black fw-bold" type="button" id="button-addon2">Search</button>
+          </div>
+    </section>
+    <section id="result">
+
+    </section>
+
+    <section>
+        <h3 class="text-danger fw-bold" id="error-msg">Please enter a city name!!!</h3>
+        <h3 class="text-danger fw-bold" id="error-msg-2">Please check city name again!!!</h3>
+    </section>
+
+    <footer>
+        <p class="text-center fw-bold my-4">Faysal Hasan &copy; 2021</p>
+    </footer>
+    
+
+
+
+
+
+
+    <!-- js link  -->
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
