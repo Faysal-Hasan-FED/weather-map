@@ -3,7 +3,7 @@
     padding: 0px;
 }
 body{
-    background-image: url(/images/image-1.jpg);
+    background-image: url(/images/image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -20,5 +20,5 @@ body{
     text-align: center;
     border-radius: 10px;
     padding: 10px;
-    border: 2px solid skyblue;
+    /* border: 2px solid skyblue; */
 }

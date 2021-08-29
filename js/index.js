@@ -1,7 +1,6 @@
-// error handling
 
-document.getElementById("error-msg").style.display='none';
-document.getElementById("error-msg-2").style.display='none';
+
+
 
 // load data by api 
 const loadData = ()=>{
@@ -11,25 +10,26 @@ const loadData = ()=>{
     if(inputFieldText!=''){
          // clearing input field
     inputField.value = '';
-    document.getElementById("error-msg").style.display='none';
+    
 
     // api start
 
     // const url = ;
    
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputFieldText}&appid=292b62d4c016c3339f326599ac4e4bfb`)
-        .then(res=>res.json())
-        .then(data=>showData(data))
-        .catch(error=>{
-            document.getElementById("error-msg-2").style.display='block';
-            document.getElementById("error-msg").style.display='none';
-            document.getElementById("error-msg-2").style.textAlign='center';
-        })
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputFieldText}&appid=292b62d4c016c3339f326599ac4e4bfb`)
+      .then(res=>{
+          if(!res.ok){
+              alert("no weather found");
+              return;
+          }
+          return res.json();
+      })
+      .then(data =>showData(data));
+      
     }
     else{
-        document.getElementById("error-msg").style.display='block';
-        document.getElementById("error-msg-2").style.display='none';
-        document.getElementById("error-msg").style.textAlign='center';
+       alert("please enter a city");
+        // return;
     }
    
 }
@@ -44,7 +44,7 @@ const showData = data =>{
     <p>Country: ${data.sys.country}</p>
     <p>Temperature: ${Math.round(data.main.temp-273)}&deg;C </p>
     <p>Feels like: ${Math.round(data.main.feels_like-273)}&deg;C </p>
-    <p>Humidity: ${data.main.humidity} </p>
+    <p>Humidity: ${data.main.humidity}% </p>
     `;
     result.appendChild(div);
 }
